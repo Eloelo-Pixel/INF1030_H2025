@@ -6,6 +6,11 @@ android {
     namespace = "com.example.inf1030_h2025"
     compileSdk = 34
 
+    buildFeatures{
+        dataBinding = true
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.example.inf1030_h2025"
         minSdk = 33

@@ -1,91 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".profiler">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/dracula"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/scooter"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+    <data>
+        <variable
+            name="nom"
+            type="com.example.inf1030_h2025.dto.MachinDTO" />
 
-    <ImageView
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/scooter"
-        android:id="@+id/frankie"
-        android:background="@drawable/circle_shape"
-        android:elevation="5dp"
-        app:layout_constraintTop_toBottomOf="@id/dracula"
-        android:clipToOutline="true"
-        app:layout_constraintEnd_toEndOf="@id/dracula"
-        app:layout_constraintBottom_toBottomOf="@id/dracula"/>
+        <variable
+            name="prenom"
+            type="com.example.inf1030_h2025.dto.MachinDTO" />
 
-    <EditText
+        <variable
+            name="adresse"
+            type="com.example.inf1030_h2025.dto.MachinDTO" />
+
+        <variable
+            name="date"
+            type="com.example.inf1030_h2025.dto.MachinDTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scooby"
-        android:hint="Nom"
-        app:layout_constraintTop_toBottomOf="@id/frankie"
-        app:layout_constraintBottom_toTopOf="@id/shaggy"
-        app:layout_constraintVertical_chainStyle="packed"/>
+        android:layout_height="match_parent"
+        tools:context=".Profiler">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/shaggy"
-        android:hint="Prenom"
-        app:layout_constraintTop_toBottomOf="@id/scooby"
-        app:layout_constraintBottom_toTopOf="@id/verra"/>
+        <ImageView
+            android:id="@+id/dracula"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/scooter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/verra"
-        android:hint="date de naissance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/shaggy"
-        app:layout_constraintEnd_toStartOf="@id/daphne"
-        app:layout_constraintBottom_toTopOf="@id/fred"/>
+        <ImageView
+            android:id="@+id/frankie"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/circle_shape"
+            android:clipToOutline="true"
+            android:elevation="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/frank"
+            app:layout_constraintBottom_toBottomOf="@id/dracula"
+            app:layout_constraintEnd_toEndOf="@id/dracula"
+            app:layout_constraintTop_toBottomOf="@id/dracula"
+            app:layout_constraintVertical_bias="0.509" />
 
-    <View
-        android:layout_width="2dp"
-        android:layout_height="0dp"
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scooby"
+            android:hint="Nom"
+            app:layout_constraintTop_toBottomOf="@id/frankie"
+            app:layout_constraintBottom_toTopOf="@id/shaggy"
+            app:layout_constraintVertical_chainStyle="packed"/>
 
-        android:background="@color/black"
-        app:layout_constraintStart_toEndOf="@id/verra"
-        app:layout_constraintEnd_toStartOf="@id/daphne"
-        app:layout_constraintTop_toTopOf="@id/verra"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/verra"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/shaggy"
+            android:hint="Prenom"
+            app:layout_constraintTop_toBottomOf="@id/scooby"
+            app:layout_constraintBottom_toTopOf="@id/verra"/>
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/daphne"
-        android:hint="adresse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/verra"
-        app:layout_constraintTop_toTopOf="@id/verra"
-        app:layout_constraintBottom_toBottomOf="@id/verra"
-        />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/verra"
+            android:text="@={bidule.date}"
+            android:hint="date de naissance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shaggy"
+            app:layout_constraintEnd_toStartOf="@id/daphne"
+            app:layout_constraintBottom_toTopOf="@id/fred"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fred"
-        android:text="save"
-        app:layout_constraintTop_toBottomOf="@+id/verra"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <View
+            android:layout_width="2dp"
+            android:layout_height="0dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="@color/black"
+            app:layout_constraintStart_toEndOf="@id/verra"
+            app:layout_constraintEnd_toStartOf="@id/daphne"
+            app:layout_constraintTop_toTopOf="@id/verra"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/verra" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/daphne"
+            android:hint="adresse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/verra"
+            app:layout_constraintTop_toTopOf="@id/verra"
+            app:layout_constraintBottom_toBottomOf="@id/verra"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fred"
+            android:text="save"
+            app:layout_constraintTop_toBottomOf="@+id/verra"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
