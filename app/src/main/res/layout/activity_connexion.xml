@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="username"
-            type="" />
+            name="auth"
+            type="com.example.inf1030_h2025.dto.AuthDTO" />
     </data>
 
 <LinearLayout
@@ -22,6 +22,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/username"
+
         android:hint="Nom utilisateur" />
 
     <EditText

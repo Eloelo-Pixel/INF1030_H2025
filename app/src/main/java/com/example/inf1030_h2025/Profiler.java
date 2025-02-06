@@ -25,10 +25,7 @@ public class Profiler extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_profiler);
 
-        bidule.setAdresse("Gotham City");
-        bidule.setDate("11 Septembre 2001");
-        bidule.setPrenom("Djamal");
-        bidule.setNom("Al-Kaida");
+        binding.setUser(bidule);
 
 
     }

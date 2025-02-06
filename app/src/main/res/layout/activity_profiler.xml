@@ -5,20 +5,9 @@
 
     <data>
         <variable
-            name="nom"
+            name="user"
             type="com.example.inf1030_h2025.dto.MachinDTO" />
 
-        <variable
-            name="prenom"
-            type="com.example.inf1030_h2025.dto.MachinDTO" />
-
-        <variable
-            name="adresse"
-            type="com.example.inf1030_h2025.dto.MachinDTO" />
-
-        <variable
-            name="date"
-            type="com.example.inf1030_h2025.dto.MachinDTO" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -56,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/scooby"
+            android:text="@={user.nom}"
             android:hint="Nom"
             app:layout_constraintTop_toBottomOf="@id/frankie"
             app:layout_constraintBottom_toTopOf="@id/shaggy"
@@ -70,15 +60,15 @@
             app:layout_constraintBottom_toTopOf="@id/verra"/>
 
         <EditText
+            android:id="@+id/verra"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/verra"
-            android:text="@={bidule.date}"
             android:hint="date de naissance"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shaggy"
+            android:text="@={bidule.date}"
+            app:layout_constraintBottom_toTopOf="@id/fred"
             app:layout_constraintEnd_toStartOf="@id/daphne"
-            app:layout_constraintBottom_toTopOf="@id/fred"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shaggy" />
 
         <View
             android:layout_width="2dp"
